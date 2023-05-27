@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import Whatsapp from "@/components/Whatsapp";
 
 export default function Page() {
   return (
@@ -23,6 +24,7 @@ export default function Page() {
           <Contact />
         </div>
         <Footer />
+        <Whatsapp />
       </main>
     </>
   );

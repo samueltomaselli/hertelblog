@@ -50,18 +50,21 @@ function Contact() {
               <p className="font-light">Conecte-se conosco:</p>
               <div className="flex gap-2 text-4xl text-primary mb-2">
                 <Link
+                  aria-label="Facebook"
                   href="https://www.facebook.com/herteladvocacia"
                   className="hover:brightness-75 transition-all hover:scale-105"
                 >
                   <FaFacebookSquare />
                 </Link>
                 <Link
+                  aria-label="Instagram"
                   href="https://www.instagram.com/herteladvocacia/"
                   className="hover:brightness-75 transition-all hover:scale-105"
                 >
                   <FaInstagramSquare />
                 </Link>
                 <Link
+                  aria-label="LinkedIn"
                   href="https://www.linkedin.com/company/hertel-sociedade-individual-de-advocacia/"
                   className="hover:brightness-75 transition-all hover:scale-105"
                 >
@@ -78,6 +81,7 @@ function Contact() {
               className=""
               display="block"
               position="relative"
+              title="localization"
             />
           </div>
           <div className="sm:p-7 p-4 relative gap-3 flex flex-col bg-primary before:absolute before:w-[26px] before:h-[26px] before:bg-primary before:rotate-45 before:left-[-13px] before:top-[240px]">

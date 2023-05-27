@@ -11,6 +11,7 @@ import { GetServerSideProps } from "next";
 import Header from "@/components/Header";
 import { client } from "../../lib/apollo";
 import Footer from "@/components/Footer";
+import Whatsapp from "@/components/Whatsapp";
 
 const GET_ALL_POSTS = gql`
   query GetAllPosts {
@@ -129,6 +130,7 @@ export default function Home({ posts }: AllPosts) {
         )}
       </div>
       <Footer />
+      <Whatsapp />
     </>
   );
 }

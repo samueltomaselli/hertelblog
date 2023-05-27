@@ -31,7 +31,7 @@ function About() {
         </div>
 
         <div className="w-full max-w-[550px] h-[300px] sm:h-[300px] lg:h-[450px] relative lg:flex-1 flex-auto">
-          <Image src="/aboutus.jpg" alt="My Image" fill className="shadow-gray-500 shadow-lg" />
+          <Image src="/aboutus.webp" alt="My Image" fill className="shadow-gray-500 shadow-lg" />
         </div>
       </div>
     </div>

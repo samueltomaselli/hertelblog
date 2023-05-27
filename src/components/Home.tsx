@@ -11,7 +11,7 @@ function Home() {
           ÉTICA, RESPONSABILIDADE E <br /> PROFISSIONALISMO
         </h1>
         <a
-          href=""
+          href=".#contact"
           className="bg-primary p-4 rounded-sm text-base font-bold flex gap-2 items-center hover:brightness-75 transition-all"
         >
           ENTRAR EM CONTATO <BsBoxArrowInUpRight className="text-2xl" />

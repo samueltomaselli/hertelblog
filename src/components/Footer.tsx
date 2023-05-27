@@ -26,18 +26,21 @@ function Footer() {
           </div>
           <div className="flex text-white gap-6 text-xl">
             <Link
+              aria-label="Facebook"
               href="https://www.facebook.com/herteladvocacia"
               className="transition-all hover:scale-105 hover:text-primary"
             >
               <FaFacebookF />
             </Link>
             <Link
+              aria-label="Instagram"
               href="https://www.instagram.com/herteladvocacia/"
               className="transition-all hover:scale-105 hover:text-primary"
             >
               <FaInstagram />
             </Link>
             <Link
+              aria-label="LinkedIn"
               href="https://www.linkedin.com/company/hertel-sociedade-individual-de-advocacia/"
               className="transition-all hover:scale-105 hover:text-primary"
             >

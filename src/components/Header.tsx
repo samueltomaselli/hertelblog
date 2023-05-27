@@ -52,7 +52,11 @@ function Header() {
               Blog
             </Link>
           </nav>
-          <button className="text-4xl text-primary lg:hidden" onClick={() => setMenu(!menu)}>
+          <button
+            name="mobile-menu"
+            className="text-4xl text-primary lg:hidden"
+            onClick={() => setMenu(!menu)}
+          >
             {menu ? <AiOutlineClose /> : <AiOutlineMenu />}
           </button>
         </div>

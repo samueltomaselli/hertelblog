@@ -11,6 +11,7 @@ import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { ElementNode } from "@graphcms/rich-text-types";
+import Whatsapp from "@/components/Whatsapp";
 
 const GET_POST = gql`
   query GetPost($slugPost: String) {
@@ -105,6 +106,7 @@ function Post({ post }: PostProps) {
         </div>
       </div>
       <Footer />
+      <Whatsapp />
     </>
   );
 }

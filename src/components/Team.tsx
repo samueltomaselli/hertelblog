@@ -11,7 +11,7 @@ function Team() {
 
       <div className="max-w-[1140px] w-full flex md:flex-row flex-col justify-between gap-10 mb-20">
         <div className="max-w-[410px] w-full lg:h-[580px] h-[420px] relative shadow-2xl shadow-gray-700">
-          <Image src="/lawyers-top.jpg" alt="Haide Hertel" fill={true} />
+          <Image src="/lawyers-top.webp" alt="Haide Hertel" fill={true} />
         </div>
         <div className="flex flex-col gap-5">
           <div>
@@ -67,7 +67,7 @@ function Team() {
           </div>
         </div>
         <div className="max-w-[410px] w-full lg:h-[580px] h-[420px] relative shadow-2xl shadow-gray-700 ">
-          <Image src="/lawyers-bottom.jpg" alt="Haide Hertel" fill={true} />
+          <Image src="/lawyers-bottom.webp" alt="Rafael Tomaselli" fill={true} />
         </div>
       </div>
     </div>

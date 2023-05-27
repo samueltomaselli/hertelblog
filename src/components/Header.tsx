@@ -12,7 +12,7 @@ function Header() {
       <header className="fixed w-screen z-50 flex justify-center bg-white h-24 shadow-xl px-4 ">
         <div className="flex items-center justify-between w-[1140px]">
           <Link href="/">
-            <Image src="/logo.png" alt="Logo" width={100} height={80} priority={true} />
+            <Image src="/logo.webp" alt="Logo" width={100} height={80} priority={true} />
           </Link>
           <nav className="lg:flex gap-5 hidden tracking-wide">
             <a

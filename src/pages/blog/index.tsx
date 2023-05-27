@@ -57,45 +57,41 @@ export default function Home({ posts }: AllPosts) {
   return (
     <>
       <Header />
-      <div className="w-full max-w-[1140px] flex flex-col mx-auto px-4 pt-36">
+      <div className="w-full max-w-[1140px] flex flex-col mx-auto px-4 pt-32 lg:pt-36">
         {posts ? (
           <>
             <Link
               href={`blog/post/${posts[0].slug}`}
               className="w-full h-full flex items-center gap-4 lg:gap-8 flex-col sm:flex-row justify-center hover:brightness-75 transition-all duration-500"
             >
-              <div className="flex flex-1 h-full flex-col gap-3 lg:gap-6">
-                <h1 className="font-semibold text-3xl md:text-4xl first-letter:text-5xl">
+              <div className="flex flex-1 h-full flex-col gap-4 lg:gap-6">
+                <h1 className="font-semibold text-3xl md:text-4xl first-letter:text-5xl ">
                   {posts[0].title}
                 </h1>
-                <p className="text-gray-700 text-sm md:text-base text-justify lg:text-left">
+                <p className="text-gray-700 text-lg text-justify lg:text-left">
                   {posts[0].subtitle}
                 </p>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <div className="text-4xl md:text-5xl">
-                      <Image
-                        src={posts[0].author.authorPhoto.url}
-                        width={50}
-                        height={50}
-                        alt=""
-                        className="rounded-2xl"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm md:text-base text-black">
-                        {posts[0].author.name}
-                      </p>
-                      <p className="font-light text-xs md:text-sm flex items-center gap-2">
-                        {format(new Date(posts[0].createdAt), "dd 'de' MMM 'de' yyyy", {
-                          locale: ptBR,
-                        })}
-                        <MdNewReleases className="text-xl text-primary" />
-                      </p>
-                    </div>
+
+                <div className="flex items-center gap-2">
+                  <Image
+                    src={posts[0].author.authorPhoto.url}
+                    width={50}
+                    height={50}
+                    alt=""
+                    className="rounded-2xl"
+                  />
+                  <div>
+                    <p className="font-semibold text-sm text-black">{posts[0].author.name}</p>
+                    <p className="font-light text-base flex items-center gap-2">
+                      {format(new Date(posts[0].createdAt), "dd 'de' MMM 'de' yyyy", {
+                        locale: ptBR,
+                      })}
+                      <MdNewReleases className="text-xl text-primary" />
+                    </p>
                   </div>
                 </div>
               </div>
+
               <div className="flex-1 flex w-full h-full min-h-[270px] md:min-h-[334px] relative rounded-2xl overflow-hidden">
                 <Image
                   loading="eager"

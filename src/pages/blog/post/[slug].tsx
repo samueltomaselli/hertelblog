@@ -59,7 +59,7 @@ function Post({ post }: PostProps) {
   return (
     <>
       <Header />
-      <div className="w-full max-w-[1140px] flex flex-col mx-auto mb-20 pt-36 px-4 bg-gray-50">
+      <div className="w-full max-w-[1140px] flex flex-col mx-auto mb-20 pt-32 lg:pt-36 px-4 bg-gray-50">
         <Link
           href="/blog"
           className="text-xl font-semibold gap-2 flex items-center mb-5 w-full max-w-fit hover:text-gray-600"
@@ -73,13 +73,13 @@ function Post({ post }: PostProps) {
           </div>
         </div>
         <div className="flex w-full flex-col mt-4 sm:mt-8 gap-4">
-          <h1 className="font-bold text-2xl sm:text-4xl lg:text-[40px]">{post.title}</h1>
+          <h1 className="font-bold text-3xl sm:text-4xl lg:text-[40px]">{post.title}</h1>
           <div className="mt-2 sm:mt-4">
             <RichText
               content={post.content.json}
               renderers={{
                 p: ({ children }) => (
-                  <p className="text-gray-700 text-sm sm:text-base sm:mt-6 text-justify lg:text-left">
+                  <p className="text-gray-700 text-lg sm:mt-6 text-justify lg:text-left">
                     {children}
                   </p>
                 ),

@@ -33,8 +33,8 @@ function Posts({ author, createdAt, subtitle, title, urlImage, urlPhoto, slug }:
         <div className="flex items-center gap-2">
           <Image src={urlPhoto} width={40} height={40} alt="" className="rounded-2xl" />
           <div>
-            <p className="font-semibold text-sm md:text-base">{author}</p>
-            <p className="font-light text-xs md:text-sm">
+            <p className="font-semibold text-base">{author}</p>
+            <p className="font-light text-sm">
               {format(new Date(createdAt), "dd 'de' MMM 'de' yyyy", { locale: ptBR })}
             </p>
           </div>

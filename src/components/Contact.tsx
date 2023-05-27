@@ -1,4 +1,3 @@
-import Iframe from "react-iframe";
 import {
   FaAt,
   FaFacebookSquare,
@@ -8,6 +7,7 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import Link from "next/link";
+import IFrame from "./IFrame";
 
 function Contact() {
   return (
@@ -72,6 +72,8 @@ function Contact() {
                 </Link>
               </div>
             </div>
+
+            <IFrame />
           </div>
           <div className="sm:p-7 p-4 relative gap-3 flex flex-col bg-primary before:absolute before:w-[26px] before:h-[26px] before:bg-primary before:rotate-45 before:left-[-13px] before:top-[240px]">
             <form

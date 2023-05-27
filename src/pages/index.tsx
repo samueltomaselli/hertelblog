@@ -11,9 +11,6 @@ import Whatsapp from "@/components/Whatsapp";
 export default function Page() {
   return (
     <>
-      <Head>
-        <title>Hertel</title>
-      </Head>
       <main className="">
         <Header />
         <div className="pt-24">

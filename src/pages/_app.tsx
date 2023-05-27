@@ -13,7 +13,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <Head>
-        <title>Hertel</title>
+        <title>Hertel Advocacia em Schroeder/SC</title>
+        <meta
+          name="description"
+          content="Serviços jurídicos em Direito Imobiliário, Previdenciário, Cível, Empresarial, Tributário, Família e Sucessões. Soluções em Direito Patrimonial. Inventários. Advogados."
+          key="desc"
+        />
       </Head>
       <main className={inter.className}>
         <Component {...pageProps} />

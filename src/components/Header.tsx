@@ -53,7 +53,7 @@ function Header() {
             </Link>
           </nav>
           <button
-            name="mobile-menu"
+            aria-label="mobile-menu"
             className="text-4xl text-primary lg:hidden"
             onClick={() => setMenu(!menu)}
           >

@@ -75,6 +75,7 @@ export default function Home({ posts }: AllPosts) {
                   <div className="flex items-center gap-2">
                     <div className="text-4xl md:text-5xl">
                       <Image
+                        loading="eager"
                         src={posts[0].author.authorPhoto.url}
                         width={50}
                         height={50}

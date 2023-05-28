@@ -5,7 +5,7 @@ function About() {
   return (
     <div
       id="about"
-      className="scroll-mt-20 w-screen flex flex-col justify-center items-center pt-20 pb-20 bg-gray-100 px-4"
+      className="scroll-mt-20 scroll w-screen flex flex-col justify-center items-center pt-20 pb-20 bg-gray-100 px-4"
     >
       <h1 className="text-center font-bold text-3xl mb-10">O ESCRITÓRIO</h1>
       <div className="max-w-[1140px] flex items-center flex-col lg:flex-row gap-10">

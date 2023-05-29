@@ -59,7 +59,7 @@ function Post({ post }: PostProps) {
   return (
     <>
       <Header />
-      <div className="w-full max-w-[1140px] flex flex-col mx-auto mb-20 pt-32 lg:pt-36 px-4 bg-gray-50">
+      <div className="w-full max-w-[1140px] flex flex-col mx-auto mb-14 pt-32 lg:pt-36 px-4 bg-gray-50">
         <Link
           href="/blog"
           className="text-xl font-semibold gap-2 flex items-center mb-5 w-full max-w-fit hover:text-gray-600"
@@ -74,7 +74,7 @@ function Post({ post }: PostProps) {
         </div>
         <div className="flex w-full flex-col mt-4 sm:mt-8 gap-4">
           <h1 className="font-bold text-3xl sm:text-4xl lg:text-[40px]">{post.title}</h1>
-          <div className="mt-2 sm:mt-4">
+          <div className="">
             <RichText
               content={post.content.json}
               renderers={{
@@ -86,7 +86,7 @@ function Post({ post }: PostProps) {
               }}
             />
           </div>
-          <div className="flex items-center gap-2 mt-4 sm:mt-6">
+          <div className="flex items-center gap-2 ">
             <Image
               src={post.author.authorPhoto.url}
               width={50}
@@ -97,7 +97,7 @@ function Post({ post }: PostProps) {
             <div>
               <p className="font-semibold">{post.author.name}</p>
               <p className="font-light text-sm">
-                {format(new Date(post.createdAt), "dd 'de' MMM 'de' yyyy", {
+                {format(new Date(post.createdAt), "dd 'de' MMMM 'de' yyyy", {
                   locale: ptBR,
                 })}
               </p>

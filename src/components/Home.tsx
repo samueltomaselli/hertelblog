@@ -10,7 +10,7 @@ function Home() {
       const isLastSlide = currentIndex === slides.length - 1;
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
       setCurrentIndex(newIndex);
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(interval);
   });
@@ -32,16 +32,21 @@ function Home() {
 
   return (
     <div id="home" className="scroll-mt-24 text-black h-[calc(100vh-96px)] relative">
-      <div className="absolute inset-0 z-[-1]">
-        <Image
-          src={`/${slides[currentIndex].url}`}
-          alt="Imagem de fundo"
-          fill
-          className="object-cover object-center relative"
-          priority={true}
-        />
+      <div className="absolute inset-0 -z-10">
+        {slides.map((slide, index) => (
+          <Image
+            key={index}
+            src={`/${slide.url}`}
+            alt="Imagem de fundo"
+            fill
+            className={`object-cover transition-opacity duration-1000 ${
+              currentIndex === index ? "opacity-100" : "opacity-0"
+            }`}
+            priority={true}
+          />
+        ))}
       </div>
-      <div className="relative z-[1] bg-[rgba(0,0,0,0.7)] h-full text-white text-2xl flex items-center justify-center flex-col px-4">
+      <div className="relative z-10 bg-[rgba(0,0,0,0.7)] h-full text-white text-2xl flex items-center justify-center flex-col px-4">
         <h1 className="xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-2xl uppercase text-center text-white font-bold mb-10">
           ÉTICA, RESPONSABILIDADE E <br /> PROFISSIONALISMO
         </h1>

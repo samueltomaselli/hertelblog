@@ -32,14 +32,14 @@ function Home() {
 
   return (
     <div id="home" className="scroll-mt-24 text-black h-[calc(100vh-96px)] relative">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 w-full">
         {slides.map((slide, index) => (
           <Image
             key={index}
             src={`/${slide.url}`}
             alt="Imagem de fundo"
             fill
-            className={`object-cover transition-opacity duration-1000 ${
+            className={`object-cover duration-1000 transition-opacity  ${
               currentIndex === index ? "opacity-100" : "opacity-0"
             }`}
             priority={true}

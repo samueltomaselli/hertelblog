@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { TbError404 } from "react-icons/tb";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { gql } from "@apollo/client";
@@ -56,6 +57,27 @@ interface PostProps {
 }
 
 function Post({ post }: PostProps) {
+  if (!post) {
+    return (
+      <>
+        <Header />
+        <div className="w-full max-w-[1140px] flex flex-col mx-auto mb-14 pt-32 lg:pt-36 px-4 bg-gray-50">
+          <Link
+            href="/blog"
+            className="text-xl font-semibold gap-2 flex items-center mb-5 w-full max-w-fit hover:text-gray-600"
+          >
+            <IoMdArrowRoundBack />
+            <h2>Voltar</h2>
+          </Link>
+          <div className="flex flex-col justify-center items-center h-96 text-3xl text-center">
+            Nenhum post encontrado.
+          </div>
+        </div>
+        <Footer />
+        <Whatsapp />
+      </>
+    );
+  }
   return (
     <>
       <Header />
@@ -88,14 +110,14 @@ function Post({ post }: PostProps) {
           </div>
           <div className="flex items-center gap-2 ">
             <Image
-              src={post.author.authorPhoto.url}
+              src={post.author?.authorPhoto.url}
               width={50}
               height={50}
               alt=""
               className="rounded-2xl"
             />
             <div>
-              <p className="font-semibold">{post.author.name}</p>
+              <p className="font-semibold">{post.author?.name}</p>
               <p className="font-light text-sm">
                 {format(new Date(post.createdAt), "dd 'de' MMMM 'de' yyyy", {
                   locale: ptBR,

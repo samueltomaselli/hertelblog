@@ -19,6 +19,8 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Serviços jurídicos em Direito Imobiliário, Previdenciário, Cível, Empresarial, Tributário, Família e Sucessões. Soluções em Direito Patrimonial. Inventários. Advogados."
           key="desc"
         />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        meta
       </Head>
       <main className={inter.className}>
         <Component {...pageProps} />

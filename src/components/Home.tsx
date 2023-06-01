@@ -10,7 +10,7 @@ function Home() {
       const isLastSlide = currentIndex === slides.length - 1;
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
       setCurrentIndex(newIndex);
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(interval);
   });
@@ -24,9 +24,6 @@ function Home() {
     },
     {
       url: "header3.jpg",
-    },
-    {
-      url: "header4.jpg",
     },
   ];
 

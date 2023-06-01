@@ -74,14 +74,14 @@ export default function Home({ posts }: AllPosts) {
 
                 <div className="flex items-center gap-2">
                   <Image
-                    src={posts[0].author.authorPhoto.url}
+                    src={posts[0].author?.authorPhoto.url}
                     width={50}
                     height={50}
                     alt=""
                     className="rounded-2xl"
                   />
                   <div>
-                    <p className="font-semibold text-sm text-black">{posts[0].author.name}</p>
+                    <p className="font-semibold text-sm text-black">{posts[0].author?.name}</p>
                     <p className="font-light text-base flex items-center gap-2">
                       {format(new Date(posts[0].createdAt), "dd 'de' MMM 'de' yyyy", {
                         locale: ptBR,
@@ -99,6 +99,7 @@ export default function Home({ posts }: AllPosts) {
                   alt="image"
                   fill={true}
                   className="object-cover"
+                  blurDataURL=""
                 />
               </div>
             </Link>

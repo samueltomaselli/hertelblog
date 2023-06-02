@@ -36,7 +36,7 @@ function Home() {
             src={`/${slide.url}`}
             alt="Imagem de fundo"
             fill
-            className={`object-cover duration-1000 transition-opacity  ${
+            className={`object-cover duration-[2000ms] transition-opacity  ${
               currentIndex === index ? "opacity-100" : "opacity-0"
             }`}
             priority={true}

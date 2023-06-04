@@ -101,9 +101,14 @@ function Post({ post }: PostProps) {
               content={post.content.json}
               renderers={{
                 p: ({ children }) => (
-                  <p className="text-gray-700 text-lg sm:mt-6 text-justify lg:text-left">
+                  <p className="text-gray-700 text-lg sm:mt-6 sm:mb-6 text-justify lg:text-left">
                     {children}
                   </p>
+                ),
+                img: ({ src = "" }) => (
+                  <div className=" w-full sm:w-2/3 h-60 sm:h-72 lg:h-[380px] relative rounded-md mb-5 mt-5">
+                    <Image src={src} alt="" className="max-w-full  rounded-md" fill />
+                  </div>
                 ),
               }}
             />

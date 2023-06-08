@@ -19,7 +19,6 @@ import { mailOptions, transporter } from "@/lib/nodemailer";
     }
   }
   
-  return res.status(400).json({message: "Bad request"})
 }
 
 export default handler;

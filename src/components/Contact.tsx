@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import IFrame from "./IFrame";
+import Form from "./Form";
 
 function Contact() {
   return (
@@ -75,56 +76,7 @@ function Contact() {
 
             <IFrame />
           </div>
-          <div className="sm:p-7 p-4 relative gap-3 flex flex-col bg-primary before:absolute before:w-[26px] before:h-[26px] before:bg-primary before:rotate-45 before:left-[-13px] before:top-[240px]">
-            <form
-              action="https://formsubmit.co/samueltomasellidev@gmail.com"
-              className="text-white"
-              autoComplete="off"
-            >
-              <h3 className="text-white font-semibold text-2xl mb-2">Contato via e-mail</h3>
-              <div className="my-4">
-                <input
-                  required
-                  type="text"
-                  name="Nome"
-                  placeholder="Nome"
-                  className="w-full bg-transparent placeholder:text-white outline-none font-normal text-base tracking-wide px-5 py-2 rounded-sm border-2 border-white"
-                />
-              </div>
-              <div className="my-4">
-                <input
-                  required
-                  type="text"
-                  name="E-mail"
-                  placeholder="E-mail"
-                  className="w-full bg-transparent placeholder:text-white outline-none font-normal text-base tracking-wide px-5 py-2 rounded-sm border-2 border-white"
-                />
-              </div>
-              <div className="my-4">
-                <input
-                  required
-                  type="text"
-                  name="Assunto"
-                  placeholder="Assunto"
-                  className="w-full bg-transparent placeholder:text-white outline-none font-normal text-base tracking-wide px-5 py-2 rounded-sm border-2 border-white"
-                />
-              </div>
-              <div className="my-4">
-                <textarea
-                  required
-                  name="Mensagem"
-                  placeholder="Mensagem"
-                  className="w-full bg-transparent placeholder:text-white outline-none border-2 border-white min-h-[150px] resize-none px-5 py-3 rounded-sm"
-                ></textarea>
-              </div>
-              <input type="hidden" name="_template" value="table" />
-              <input
-                type="submit"
-                value="Enviar"
-                className="bg-white text-base text-primary leading-none cursor-pointer font-semibold px-5 py-3  rounded-sm border-2 border-solid border-white hover:bg-primary hover:text-white transition-all"
-              />
-            </form>
-          </div>
+          <Form />
         </div>
       </div>
     </div>

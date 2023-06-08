@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const schema = z.object({
   name: z.string().min(3, { message: 'O campo "Nome" é obrigatório!' }),
-  email: z.string().email({ message: `O campo "E-mail" deve seguir o padrão correto!` }),
+  email: z.string().email({ message: `O campo "E-mail" é inválido!` }),
   subject: z.string().min(5, { message: `O campo "Assunto" é obrigatório!` }),
   message: z.string().min(5, { message: `O campo "Mensagem" é obrigatório!` }),
 });
@@ -25,6 +25,7 @@ function Form() {
   } = useForm<FormInput>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormInput) => {
+    setIsDone(false);
     setIsLoading(true);
     await sendContactForm(data);
     setIsLoading(false);
@@ -43,6 +44,7 @@ function Form() {
             <input
               type="text"
               placeholder="Nome"
+              onFocus={() => setIsDone(false)}
               className="w-full bg-transparent placeholder:text-white outline-none font-normal text-base tracking-wide px-5 py-2 rounded-sm border-2 border-white"
               {...register("name")}
             />
@@ -54,6 +56,7 @@ function Form() {
             <input
               type="text"
               placeholder="E-mail"
+              onFocus={() => setIsDone(false)}
               className="w-full bg-transparent placeholder:text-white outline-none font-normal text-base tracking-wide px-5 py-2 rounded-sm border-2 border-white"
               {...register("email")}
             />
@@ -65,6 +68,7 @@ function Form() {
             <input
               type="text"
               placeholder="Assunto"
+              onFocus={() => setIsDone(false)}
               className="w-full bg-transparent placeholder:text-white outline-none font-normal text-base tracking-wide px-5 py-2 rounded-sm border-2 border-white"
               {...register("subject")}
             />
@@ -75,6 +79,7 @@ function Form() {
             )}
             <textarea
               placeholder="Mensagem"
+              onFocus={() => setIsDone(false)}
               className="w-full bg-transparent placeholder:text-white outline-none border-2 border-white min-h-[150px] resize-none px-5 py-3 rounded-sm"
               {...register("message")}
             ></textarea>
@@ -84,7 +89,7 @@ function Form() {
             type="submit"
             value={isLoading ? "Enviando..." : "Enviar"}
             disabled={isLoading}
-            className="bg-white disabled:bg-primary disabled:text-white text-base text-primary leading-none cursor-pointer font-semibold px-5 py-3  rounded-sm border-2 border-solid border-white hover:bg-primary hover:text-white transition-all"
+            className="bg-white disabled:bg-primary disabled:cursor-auto disabled:text-white text-base text-primary leading-none cursor-pointer font-semibold px-5 py-3  rounded-sm border-2 border-solid border-white hover:bg-primary hover:text-white transition-all"
           />
         </form>
         {isDone ? <p className="text-white">E-mail enviado com sucesso.</p> : null}

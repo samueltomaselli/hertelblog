@@ -15,18 +15,21 @@ type FormInput = z.infer<typeof schema>;
 
 function Form() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isDone, setIsDone] = useState<boolean>(false);
 
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm<FormInput>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormInput) => {
     setIsLoading(true);
     await sendContactForm(data);
-
     setIsLoading(false);
+    reset();
+    setIsDone(true);
   };
   return (
     <>
@@ -80,9 +83,11 @@ function Form() {
           <input
             type="submit"
             value={isLoading ? "Enviando..." : "Enviar"}
-            className="bg-white text-base text-primary leading-none cursor-pointer font-semibold px-5 py-3  rounded-sm border-2 border-solid border-white hover:bg-primary hover:text-white transition-all"
+            disabled={isLoading}
+            className="bg-white disabled:bg-primary disabled:text-white text-base text-primary leading-none cursor-pointer font-semibold px-5 py-3  rounded-sm border-2 border-solid border-white hover:bg-primary hover:text-white transition-all"
           />
         </form>
+        {isDone ? <p className="text-white">E-mail enviado com sucesso.</p> : null}
       </div>
     </>
   );

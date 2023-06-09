@@ -48,7 +48,7 @@ function Footer() {
             </Link>
           </div>
           <div className="text-white text-center">
-            © 2022 - Hertel Sociedade Individual de Advocacia - Todos os direitos reservados.
+            © 2023 - Hertel Sociedade Individual de Advocacia - Todos os direitos reservados.
           </div>
         </div>
       </div>

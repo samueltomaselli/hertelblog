@@ -9,7 +9,7 @@ const handler = async (req:any, res:any) => {
         ...mailOptions,
         subject: data.subject,
         text: "This is a test",
-        html: `<h1>${data.name}</h1><h1>${data.email}</h1><h1>${data.message}</h1>`
+        html: `<div><h2>E-mail: ${data.email}</h2></div><h2>Nome: ${data.name}</h2><h2>Conteúdo: ${data.message}</h2>`
 
       });
       return res.status(200).json({success:true});

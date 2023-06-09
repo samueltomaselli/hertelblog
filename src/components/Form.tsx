@@ -41,6 +41,7 @@ function Form() {
             {errors.name?.message && (
               <p className="text-sm text-white pb-2">{errors.name?.message}</p>
             )}
+
             <input
               type="text"
               placeholder="Nome"

@@ -12,6 +12,7 @@ import Header from "@/components/Header";
 import { client } from "../../lib/apollo";
 import Footer from "@/components/Footer";
 import Whatsapp from "@/components/Whatsapp";
+import { BsArrowRight } from "react-icons/bs";
 
 const GET_ALL_POSTS = gql`
   query GetAllPosts {
@@ -62,13 +63,13 @@ export default function Home({ posts }: AllPosts) {
           <>
             <Link
               href={`blog/post/${posts[0].slug}`}
-              className="w-full h-full flex items-center gap-4 lg:gap-8 flex-col sm:flex-row justify-center hover:brightness-75 transition-all duration-500"
+              className="w-full h-full flex items-center gap-4 lg:gap-8 flex-col sm:flex-row justify-center transition-all  sm:rounded-r-xl rounded-br-xl shadow-[0_2px_8px_0_rgba(19,19,20,0.28)] hover:scale-95 duration-300"
             >
-              <div className="flex flex-1 h-full flex-col gap-4 lg:gap-6">
-                <h1 className="font-semibold text-3xl md:text-4xl first-letter:text-5xl ">
+              <div className="flex flex-1 h-full flex-col gap-4 lg:gap-6 sm:pl-4 p-4">
+                <h1 className="font-semibold text-2xl md:text-4xl first-letter:text-5xl ">
                   {posts[0].title}
                 </h1>
-                <p className="text-gray-700 text-lg text-justify lg:text-left">
+                <p className="text-gray-700 text-base md:text-lg text-justify lg:text-left ">
                   {posts[0].subtitle}
                 </p>
 
@@ -92,7 +93,7 @@ export default function Home({ posts }: AllPosts) {
                 </div>
               </div>
 
-              <div className="flex-1 flex w-full h-full min-h-[270px] md:min-h-[334px] relative rounded-2xl overflow-hidden">
+              <div className="flex-1 flex w-full h-full min-h-[270px] sm:min-h-[334px] relative  overflow-hidden sm:rounded-r-xl rounded-br-xl">
                 <Image
                   loading="eager"
                   src={posts[0].coverImage.url}

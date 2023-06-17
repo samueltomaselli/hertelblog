@@ -13,6 +13,7 @@ import { ptBR } from "date-fns/locale";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { ElementNode } from "@graphcms/rich-text-types";
 import Whatsapp from "@/components/Whatsapp";
+import Error404 from "@/pages/404";
 
 const GET_POST = gql`
   query GetPost($slugPost: String) {
@@ -58,25 +59,7 @@ interface PostProps {
 
 function Post({ post }: PostProps) {
   if (!post) {
-    return (
-      <>
-        <Header />
-        <div className="w-full max-w-[1140px] flex flex-col mx-auto mb-14 pt-32 lg:pt-36 px-4 bg-gray-50">
-          <Link
-            href="/blog"
-            className="text-xl font-semibold gap-2 flex items-center mb-5 w-full max-w-fit hover:text-gray-600"
-          >
-            <IoMdArrowRoundBack />
-            <h2>Voltar</h2>
-          </Link>
-          <div className="flex flex-col justify-center items-center h-96 text-3xl text-center">
-            Nenhum post encontrado.
-          </div>
-        </div>
-        <Footer />
-        <Whatsapp />
-      </>
-    );
+    return <Error404 />;
   }
   return (
     <>

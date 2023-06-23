@@ -18,7 +18,7 @@ function Posts({ author, createdAt, subtitle, title, urlImage, urlPhoto, slug }:
   return (
     <Link
       href={`blog/post/${slug}`}
-      className="w-full sm:max-w-[350px] border border-gray-200 rounded-lg shadow   h-full flex flex-col items-center justify-between gap-2 rounded-t-2xl hover:scale-95 transition-all duration-300"
+      className="w-full sm:max-w-[350px] border border-gray-200 rounded-lg shadow h-full flex flex-col items-center justify-between gap-2 hover:scale-95 transition-all duration-300"
     >
       <div className="flex w-full h-[200px] sm:h-[234px] relative rounded-t-2xl overflow-hidden">
         <Image src={urlImage} alt="image" fill={true} className="object-cover" />

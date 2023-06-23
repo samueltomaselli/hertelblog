@@ -63,13 +63,13 @@ export default function Home({ posts }: AllPosts) {
           <>
             <Link
               href={`blog/post/${posts[0].slug}`}
-              className="w-full h-full flex items-center gap-4 lg:gap-8 flex-col sm:flex-row justify-center transition-all  sm:rounded-r-xl rounded-br-xl shadow-[0_2px_8px_0_rgba(19,19,20,0.28)] hover:scale-95 duration-300"
+              className="w-full h-full flex items-center gap-4 lg:gap-8 flex-col sm:flex-row justify-center transition-all  sm:rounded-r-xl rounded-br-xl border border-gray-200 rounded-lg shadow  hover:scale-95 duration-300"
             >
               <div className="flex flex-1 h-full flex-col gap-4 lg:gap-6 sm:pl-4 p-4">
                 <h1 className="font-semibold text-2xl md:text-4xl first-letter:text-5xl ">
                   {posts[0].title}
                 </h1>
-                <p className="text-gray-700 text-base md:text-lg text-justify lg:text-left ">
+                <p className="text-gray-700 text-base md:text-lg text-justify lg:text-left line-clamp-4">
                   {posts[0].subtitle}
                 </p>
 
@@ -93,7 +93,7 @@ export default function Home({ posts }: AllPosts) {
                 </div>
               </div>
 
-              <div className="flex-1 flex w-full h-full min-h-[270px] sm:min-h-[334px] relative  overflow-hidden sm:rounded-r-xl rounded-br-xl">
+              <div className="flex-1 flex w-full h-full min-h-[270px] sm:min-h-[334px] relative  overflow-hidden sm:rounded-r-xl sm:rounded-l-none rounded-b-xl">
                 <Image
                   loading="eager"
                   src={posts[0].coverImage.url}
@@ -104,7 +104,9 @@ export default function Home({ posts }: AllPosts) {
                 />
               </div>
             </Link>
-            <h2 className="text-3xl font-bold mt-14 mb-8 text-black">Últimas postagens: </h2>
+            <h2 className="text-3xl font-bold mt-8 sm:mt-14 mb-8 text-black">
+              Últimas postagens:{" "}
+            </h2>
             <div className="flex flex-col items-center sm:grid grid-cols-2 md:grid-cols-3 gap-7 lg:gap-8 mb-20">
               {posts.map((post, index) => {
                 if (index !== 0) {

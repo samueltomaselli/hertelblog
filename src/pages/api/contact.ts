@@ -19,7 +19,7 @@ const handler = async (req:any, res:any) => {
     }
   }
   
-  return res.status(404).json()
+  return res.status(400).json({message: "Error"})
 }
 
 export default handler;

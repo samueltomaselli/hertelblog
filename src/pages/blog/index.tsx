@@ -93,7 +93,7 @@ export default function Home({ posts }: AllPosts) {
                 </div>
               </div>
 
-              <div className="flex-1 flex w-full h-full min-h-[270px] sm:min-h-[334px] relative overflow-hidden">
+              <div className="flex-1 flex w-full h-full min-h-[270px] sm:min-h-[334px] relative overflow-hidden rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none">
                 <Image
                   loading="eager"
                   src={posts[0].coverImage.url}
